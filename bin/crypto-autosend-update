@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+cd ${SCRIPT_DIR}
+
+# Autofilled Variables (do not change)
+export vPWD=$(pwd)
+export vPATH=$(echo $PATH)
+export vVER=$(cat .crypto-autosend.version)
+
+timestamp() {
+  echo -n "[$(date +"%Y-%m-%d %H-%M-%S")] "
+}
+
+if [[ -f ".crypto-autosend.config" ]]; then
+
+  source .crypto-autosend.config
+
+  timestamp ; echo ""
+  timestamp ; echo "crypto-autosend-update ${vVER}"
+  timestamp ; echo ""
+  timestamp ; echo "host                [$vHOST]"
+  timestamp ; echo "port                [$vPORT]"
+  timestamp ; echo "user                [$vUSER]"
+  timestamp ; echo ""
+  timestamp ; echo "to addr             [$vTOADDR]"
+  timestamp ; echo "min xfer            [$vMINXFER]"
+  timestamp ; echo "comment             [$vCOMMENT]"
+  timestamp ; echo ""
+
+else
+
+  echo ".crypto-autosend.config does not exist.\nPlease read the README.md and run the installer!"
+  echo ""
+  exit
+
+fi
+
+cd ${vREPODIR}
+git pull ; ./install_crypto-autosend.sh ;
+
+# Clear ENV vars for security
+source ${vPWD}/.crypto-autosend.config.clear

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+#
+## coind RPC Connection Info
+#
+
+# Coind settings
+export vHOST="192.168.2.50"
+export vPORT="4200"
+export vUSER="myrpcusername"
+export vPASS="myrpcpassword"
+
+# Wallet password to unlock wallet (leave blank for none)
+export vWALLETPASS="MyRTMWalletPasswordOrSeed"
+
+#
+## General Settings
+#
+
+# Address to send RTM's to
+export vTOADDR="mysendtoaddress"
+
+# Minimum RTM to send
+export vMINXFER="15"
+
+# Comment to add
+export vCOMMENT="To INodez Onboarding (CRON)"
+
+# Location of this repository
+export vREPODIR="/root/local-repos/binsync"

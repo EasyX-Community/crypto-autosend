@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+cd ${SCRIPT_DIR}
+
+# Autofilled Variables (do not change)
+export vPWD=$(pwd)
+export vPATH=$(echo $PATH)
+export vVER=$(cat .crypto-autosend.version)
+
+timestamp() {
+  echo -n "[$(date +"%Y-%m-%d %H-%M-%S")] "
+}
+
+if test -f .crypto-autosend.config; then
+  source .crypto-autosend.config
+else
+  timestamp ; echo ".crypto-autosend.config does not exist, please read the README.md!"
+  timestamp ; echo ""
+  exit
+fi
+
+timestamp ; echo ""
+timestamp ; echo "crypto-autosend ${vVER}"
+timestamp ; echo ""
+timestamp ; echo "host                [$vHOST]"
+timestamp ; echo "port                [$vPORT]"
+timestamp ; echo "user                [$vUSER]"
+timestamp ; echo ""
+timestamp ; echo "to addr             [$vTOADDR]"
+timestamp ; echo "min xfer            [$vMINXFER]"
+timestamp ; echo "comment             [$vCOMMENT]"
+timestamp ; echo ""
+
+
+
+vBALANCE=$(raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} getbalance)
+
+#echo "[${vBALANCE}][${vMINXFER}]"
+
+if (( $(echo "$vBALANCE >= $vMINXFER" |bc -l) ))
+then
+  timestamp ; echo "Balance: ${vBALANCE} >= ${vMINXFER}... Probably should send ${vBALANCE} RTMs to INodez!"
+  timestamp ; echo "Unlocking wallet..."
+  raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} walletpassphrase "${vWALLETPASS}" 300
+  timestamp ; raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} sendtoaddress "${vTOADDR}" ${vBALANCE} "${vCOMMENT}" "" true false false
+else
+  timestamp ; echo "Balance is ${vBALANCE}. Keep accumulating..."
+fi
+
+timestamp ; echo ""
+
+#raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} help
+
+# Clear ENV vars for security
+source .crypto-autosend.config.clear
