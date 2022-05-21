@@ -5,7 +5,7 @@ Automatically check walletd for coins and send all to specified address. Featuri
 
 Used for auto sending Raptoreum/RTM to INodez onboarding address - so you can keep mining to desktop wallet :)
 
-Could also be repurposed for other crypto's that have sendtoaddress RPC function. If your coind does not have the sendtoaddress function you can modify it to use a different send function. You'll be on your own for that, good luck!
+Could also be repurposed for other crypto's that have sendtoaddress RPC function. If your coind does not have the sendtoaddress function you can modify it to use a different send function. You'll be on your own for that, good luck!.
 
 ### Disclaimer:
 **I am not liable in any way for damages to your computer or lost funds due to bugs, being hacked, exploited, or any other malfunction of the scripts. Having a script that automatically sends all of your cryptocurrency to an address is inherently dangerous and can be exploited for malicious purposes. Please be advised of the risks and ensure the receiving address is the correct address before setting this script up to send to it. This source code is open, it is your responsibility to audit the code.**
