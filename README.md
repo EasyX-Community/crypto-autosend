@@ -7,19 +7,19 @@ Used for auto sending Raptoreum/RTM to INodez onboarding address - so you can ke
 
 Could also be repurposed for other crypto's that have sendtoaddress RPC function. If your coind does not have the sendtoaddress function you can modify it to use a different send function. You'll be on your own for that, good luck!
 
-#### Changelog:
-- Added path to CLI as config variable fixing bug where script does not know where cli is located
-
 ### Disclaimer:
 **I am not liable in any way for damages to your computer or lost funds due to bugs, being hacked, exploited, or any other malfunction of the scripts. Having a script that automatically sends all of your cryptocurrency to an address is inherently dangerous and can be exploited for malicious purposes. Please be advised of the risks and ensure the receiving address is the correct address before setting this script up to send to it. This source code is open, it is your responsibility to audit the code.**
 
-#### Requirements:
-- Some coind running on some machine configured with LAN IP as host, some port, some user, and some password
+#### Changelog:
+- Added path to CLI as config variable fixing bug where script does not know where cli is located
 
 #### Notes:
 - It is important the instructions are completed in order
 - Read the notes about [cronjobs](#cronjobs) before installing
 - Do not delete the git repository directory, it installs in it's place
+
+#### Requirements:
+- Some coind running on some machine configured with LAN IP as host, some port, some user, and some password
 
 #### Setup:
 1. `cd /opt`
