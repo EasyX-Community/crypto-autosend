@@ -10,6 +10,9 @@ Could also be repurposed for other crypto's that have sendtoaddress RPC function
 ### Disclaimer:
 **I am not liable in any way for damages to your computer or lost funds due to bugs, being hacked, exploited, or any other malfunction of the scripts. Having a script that automatically sends all of your cryptocurrency to an address is inherently dangerous and can be exploited for malicious purposes. Please be advised of the risks and ensure the receiving address is the correct address before setting this script up to send to it. This source code is open, it is your responsibility to audit the code.**
 
+#### Changelog:
+- Added path to CLI as config variable fixing bug where script does not know where cli is located
+
 #### Requirements:
 - Some coind running on some machine configured with LAN IP as host, some port, some user, and some password
 
@@ -17,9 +20,6 @@ Could also be repurposed for other crypto's that have sendtoaddress RPC function
 - It is important the instructions are completed in order
 - Read the notes about [cronjobs](#cronjobs) before installing
 - Do not delete the git repository directory, it installs in it's place
-
-#### Changelog:
-- Added path to CLI as config variable fixing bug where script does not know where cli is located
 
 #### Setup:
 1. `cd /opt`
