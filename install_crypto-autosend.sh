@@ -39,6 +39,8 @@ echo ""
 
 else
 
+  touch /var/log/crypto-autosend.log
+
   echo "apt updating..."
   apt update
   echo ""
@@ -200,7 +202,7 @@ if [[ $vCRONJOB -eq 0 ]] ; then
   if [[ "$vCRONENTRIES" != *"${vPWD}/bin/crypto-autosend ;"* ]] ; then
     echo "installing crypto-autosend cronjob"
     echo -e "$(crontab -l)\n\n# crypto-autosend cronjob" | crontab -
-    echo -e "$(crontab -l)\n0 * * * * ${vPWD}/bin/crypto-autosend ;" | crontab -
+    echo -e "$(crontab -l)\n0 * * * * ${vPWD}/bin/crypto-autosend | tee -a /var/log/crypto-autosend.log;" | crontab -
   else
     echo "refusing to install crypto-autosend cron, cron already exists!"
   fi
