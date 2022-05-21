@@ -18,6 +18,9 @@ Could also be repurposed for other crypto's that have sendtoaddress RPC function
 - Read the notes about [cronjobs](#cronjobs) before installing
 - Do not delete the git repository directory, it installs in it's place
 
+#### Changelog:
+- Added path to CLI as config variable fixing bug where script does not know where cli is located
+
 #### Setup:
 1. `cd /opt`
 2. `git clone https://gogs.easyx.cc/EasyX-Community/crypto-autosend.git`

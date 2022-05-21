@@ -9,6 +9,7 @@ export vPATH=$(echo $PATH)
 export vVER=$(cat bin/.crypto-autosend.version)
 
 # Clear variables
+export vCLI=""
 export vHOST=""
 export vPORT=""
 export vUSER=""
@@ -22,17 +23,19 @@ if [ -f "bin/.crypto-autosend.config" ] ; then
 
   source bin/.crypto-autosend.config
 
-  echo ""
-  echo "crypto-autosend ${vVER}"
-  echo ""
-  echo "rpc host                [$vHOST]"
-  echo "rpc port                [$vPORT]"
-  echo "rpc user                [$vUSER]"
-  echo ""
-  echo "to addr                 [$vTOADDR]"
-  echo "min xfer                [$vMINXFER]"
-  echo "comment                 [$vCOMMENT]"
-  echo ""
+echo ""
+echo "crypto-autosend ${vVER}"
+echo ""
+echo "CLI path                [${vCLI}]"
+echo ""
+echo "RPC host                [${vHOST}]"
+echo "RPC port                [${vPORT}]"
+echo "RPC user                [${vUSER}]"
+echo ""
+echo "To addr                 [${vTOADDR}]"
+echo "Min xfer                [${vMINXFER}]"
+echo "Comment                 [${vCOMMENT}]"
+echo ""
 
 else
 

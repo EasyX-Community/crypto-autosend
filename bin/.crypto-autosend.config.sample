@@ -4,6 +4,9 @@
 ## coind RPC Connection Info
 #
 
+# Coind CLI location
+export vCLI="/home/${USER}/bin/raptoreum-cli"
+
 # Coind settings
 export vHOST="192.168.2.50"
 export vPORT="4200"
