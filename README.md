@@ -1,4 +1,4 @@
-# crypto-autosend v1.0.2
+# crypto-autosend v1.0.3
 
 #### Description:
 Automatically check walletd for coins and send all to specified address. Featuring a new installer. Linux only.
