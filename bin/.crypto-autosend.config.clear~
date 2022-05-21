@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Coind settings
+export vHOST=""
+
+# Coind settings
+export vHOST=""
+export vPORT=""
+export vUSER=""
+export vPASS=""
+
+# Wallet password to unlock wallet
+export vWALLETPASS=""
+
+# Address to send RTM's to
+export vTOADDR=""
+
+# Minimum RTM to send
+export vMINXFER="0"
+
+# Comment to add
+export vCOMMENT=""
