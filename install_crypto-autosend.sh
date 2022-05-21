@@ -55,6 +55,13 @@ else
   while [ "$vCONTINUEVAR" == "1" ]
   do
 
+    while [ "$vCLI" == "" ]
+    do
+      vCLI=$(dialog --stdout --title "Configuration" \
+        --backtitle "crypto-autosend ${vVER} setup" \
+        --inputbox "CLI path: " 8 60)
+    done
+
     while [ "$vHOST" == "" ]
     do
       vHOST=$(dialog --stdout --title "Configuration" \
