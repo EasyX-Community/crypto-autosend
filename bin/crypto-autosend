@@ -5,7 +5,7 @@ cd ${SCRIPT_DIR}
 
 # Autofilled Variables (do not change)
 export vPWD=$(pwd)
-export vPATH=$(echo $PATH)
+export vPATH=$(echo ${PATH})
 export vVER=$(cat .crypto-autosend.version)
 
 timestamp() {
@@ -23,18 +23,20 @@ fi
 timestamp ; echo ""
 timestamp ; echo "crypto-autosend ${vVER}"
 timestamp ; echo ""
-timestamp ; echo "host                [$vHOST]"
-timestamp ; echo "port                [$vPORT]"
-timestamp ; echo "user                [$vUSER]"
+timestamp ; echo "CLI path                [${vCLI}]"
 timestamp ; echo ""
-timestamp ; echo "to addr             [$vTOADDR]"
-timestamp ; echo "min xfer            [$vMINXFER]"
-timestamp ; echo "comment             [$vCOMMENT]"
+timestamp ; echo "RPC host                [${vHOST}]"
+timestamp ; echo "RPC port                [${vPORT}]"
+timestamp ; echo "RPC user                [${vUSER}]"
+timestamp ; echo ""
+timestamp ; echo "To addr                 [${vTOADDR}]"
+timestamp ; echo "Min xfer                [${vMINXFER}]"
+timestamp ; echo "Comment                 [${vCOMMENT}]"
 timestamp ; echo ""
 
 
 
-vBALANCE=$(raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} getbalance)
+vBALANCE=$(${vCLI} -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} getbalance)
 
 #echo "[${vBALANCE}][${vMINXFER}]"
 
@@ -42,8 +44,8 @@ if (( $(echo "$vBALANCE >= $vMINXFER" |bc -l) ))
 then
   timestamp ; echo "Balance: ${vBALANCE} >= ${vMINXFER}... Probably should send ${vBALANCE} RTMs to INodez!"
   timestamp ; echo "Unlocking wallet..."
-  raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} walletpassphrase "${vWALLETPASS}" 300
-  timestamp ; raptoreum-cli -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} sendtoaddress "${vTOADDR}" ${vBALANCE} "${vCOMMENT}" "" true false false
+  ${vCLI} -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} walletpassphrase "${vWALLETPASS}" 300
+  timestamp ; ${vCLI} -rpcconnect=${vHOST} -rpcport=${vPORT} -rpcuser=${vUSER} -rpcpassword=${vPASS} sendtoaddress "${vTOADDR}" ${vBALANCE} "${vCOMMENT}" "" true false false
 else
   timestamp ; echo "Balance is ${vBALANCE}. Keep accumulating..."
 fi

@@ -1,4 +1,4 @@
-# crypto-autosend v1.0.2
+# crypto-autosend v1.0.3
 
 #### Description:
 Automatically check walletd for coins and send all to specified address. Featuring a new installer. Linux only.
@@ -10,13 +10,16 @@ Could also be repurposed for other crypto's that have sendtoaddress RPC function
 ### Disclaimer:
 **I am not liable in any way for damages to your computer or lost funds due to bugs, being hacked, exploited, or any other malfunction of the scripts. Having a script that automatically sends all of your cryptocurrency to an address is inherently dangerous and can be exploited for malicious purposes. Please be advised of the risks and ensure the receiving address is the correct address before setting this script up to send to it. This source code is open, it is your responsibility to audit the code.**
 
-#### Requirements:
-- Some coind running on some machine configured with LAN IP as host, some port, some user, and some password
-
 #### Notes:
 - It is important the instructions are completed in order
 - Read the notes about [cronjobs](#cronjobs) before installing
 - Do not delete the git repository directory, it installs in it's place
+
+#### Changelog:
+- Added path to CLI as config variable fixing bug where script does not know where cli is located
+
+#### Requirements:
+- Some coind running on some machine configured with LAN IP as host, some port, some user, and some password
 
 #### Setup:
 1. `cd /opt`
