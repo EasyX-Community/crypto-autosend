@@ -4,7 +4,7 @@
 # Filling in your private info here will expose it to anyone with access to your server!
 
 # Coind settings
-export vHOST=""
+export vCLI=""
 
 # Coind settings
 export vHOST=""
