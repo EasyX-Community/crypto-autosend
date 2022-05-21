@@ -41,6 +41,20 @@ If you are unsure about crontab times, this calculator will come in handy [https
 #### Coming features:
 - Can't think of any at the moment, but please create GitHub or Gogs issue ticket if you have any suggestions.
 
+#### Official Repositories:
+Some sources will be under the user profile for mooleshacat/moocat and some will be under EasyX-Community. The following are the locations in which you can find the official source code of this repository:
+- https://gogs.easyx.cc/EasyX-Community/ (Main Repository)
+- https://github.com/EasyX-Community/ (Mirror)
+- https://gitlab.com/e3074 (Mirror)
+- https://codeberg.org/EasyX-Community/ (Mirror)
+- https://bitbucket.org/easyx-community/ (Mirror)
+- https://sourceforge.net/u/easyx-community/profile/ (Mirror)
+- https://codegiant.io/mooleshacat/easyx-community (Mirror)
+
+If you have downloaded or cloned the source from anywhere else, you may have a copy that has been modified in malicious ways!
+
+Please be sure only to use the above sources!
+
 
 #### Donations:
 **XMR:** 84wwa7EKo8uasZAHijHKtBTuBaMPuNjCJgnfGJrsLFo4aZcfrzGvUX33sSeFNdno8fPiTDGnz4h1bCvsdFQYWRuR2619FzS <br />
