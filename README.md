@@ -7,7 +7,7 @@ Used for auto sending Raptoreum/RTM to INodez onboarding address - so you can ke
 
 Could also be repurposed for other crypto's that have sendtoaddress RPC function. If your coind does not have the sendtoaddress function you can modify it to use a different send function. You'll be on your own for that, good luck!
 
-### Disclaimer:
+#### Disclaimer:
 **I am not liable in any way for damages to your computer or lost funds due to bugs, being hacked, exploited, or any other malfunction of the scripts. Having a script that automatically sends all of your cryptocurrency to an address is inherently dangerous and can be exploited for malicious purposes. Please be advised of the risks and ensure the receiving address is the correct address before setting this script up to send to it. This source code is open, it is your responsibility to audit the code.**
 
 #### Notes:
@@ -57,7 +57,7 @@ Please be sure only to use the above sources!
 
 
 #### Donations:
-**XMR:** 41tsd6TiQouPJN5cjERKjL6kE5fXcdUrr4uoRrYyfLFCZJumDXpipiERNtVq2DSaUjeAEaDjdDbs15YTNUYRqhkdE83x4PE <br />
+**XMR:** 41y4Zerp4HbMM6Q6qTdPfxNKuHJLiuWioB7G8pm8mmNK2CQ2EkPsdawaChHtmJPiUp8X5KAZ9dVkG7Yt7bra6auM3iDZqdh <br />
 **BTC:** bc1qffd7j4jdspfjc8mr05g8yqfncjfdnzamec53tr <br />
 **LTC:** ltc1q8afdasd2qanphs82rqvetzu8yrk2kq6y4fqvrn <br />
 **ETH(ERC-20):** 0x784207DC134B61E0bD7edA658aa830e8FD12A7c7 <br />
